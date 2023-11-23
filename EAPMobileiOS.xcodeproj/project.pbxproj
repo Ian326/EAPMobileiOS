@@ -18,9 +18,9 @@
 		E1766AFF2B0FC510009DC969 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1766AFE2B0FC510009DC969 /* Models.swift */; };
 		E1766B012B0FC525009DC969 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1766ACF2B0FC2DC009DC969 /* ContentView.swift */; };
 		E1E784122B0FD09A0023183F /* NetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784112B0FD09A0023183F /* NetworkAPIService.swift */; };
-		E1E784142B0FD0B50023183F /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784132B0FD0B50023183F /* APIProtocol.swift */; };
 		E1E784162B0FD0CB0023183F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784152B0FD0CB0023183F /* Repository.swift */; };
 		E1E7841A2B0FEAC50023183F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784192B0FEAC50023183F /* ContentViewModel.swift */; };
+		E1E784202B0FEE650023183F /* ListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7841F2B0FEE650023183F /* ListRequirement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,9 @@
 		E1766AEA2B0FC2E0009DC969 /* EAPMobileiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAPMobileiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1766AFE2B0FC510009DC969 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E1E784112B0FD09A0023183F /* NetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIService.swift; sourceTree = "<group>"; };
-		E1E784132B0FD0B50023183F /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		E1E784152B0FD0CB0023183F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E1E784192B0FEAC50023183F /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E1E7841F2B0FEE650023183F /* ListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRequirement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +108,9 @@
 		E1766ACC2B0FC2DC009DC969 /* EAPMobileiOS */ = {
 			isa = PBXGroup;
 			children = (
-				E1E784182B0FEAA20023183F /* View */,
-				E1E784172B0FEA950023183F /* ViewModel */,
-				E1766AFD2B0FC4D4009DC969 /* Models */,
+				E1E7841E2B0FEDAE0023183F /* Domain */,
+				E1E7841C2B0FED300023183F /* Framework */,
+				E1E7841B2B0FED2A0023183F /* Data */,
 				E1766ACD2B0FC2DC009DC969 /* EAPMobileiOSApp.swift */,
 				E1766AD12B0FC2DF009DC969 /* Assets.xcassets */,
 				E1766AD32B0FC2DF009DC969 /* Preview Content */,
@@ -146,8 +146,6 @@
 		E1766AFD2B0FC4D4009DC969 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1E784112B0FD09A0023183F /* NetworkAPIService.swift */,
-				E1E784132B0FD0B50023183F /* APIProtocol.swift */,
 				E1E784152B0FD0CB0023183F /* Repository.swift */,
 				E1766AFE2B0FC510009DC969 /* Models.swift */,
 			);
@@ -168,6 +166,40 @@
 				E1766ACF2B0FC2DC009DC969 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E1E7841B2B0FED2A0023183F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E1E7841D2B0FED630023183F /* Network */,
+				E1766AFD2B0FC4D4009DC969 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E1E7841C2B0FED300023183F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E1E784172B0FEA950023183F /* ViewModel */,
+				E1E784182B0FEAA20023183F /* View */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		E1E7841D2B0FED630023183F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E1E784112B0FD09A0023183F /* NetworkAPIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E1E7841E2B0FEDAE0023183F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E1E7841F2B0FEE650023183F /* ListRequirement.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +344,7 @@
 				E1766ACE2B0FC2DC009DC969 /* EAPMobileiOSApp.swift in Sources */,
 				E1766B012B0FC525009DC969 /* ContentView.swift in Sources */,
 				E1E7841A2B0FEAC50023183F /* ContentViewModel.swift in Sources */,
-				E1E784142B0FD0B50023183F /* APIProtocol.swift in Sources */,
+				E1E784202B0FEE650023183F /* ListRequirement.swift in Sources */,
 				E1E784122B0FD09A0023183F /* NetworkAPIService.swift in Sources */,
 				E1E784162B0FD0CB0023183F /* Repository.swift in Sources */,
 			);

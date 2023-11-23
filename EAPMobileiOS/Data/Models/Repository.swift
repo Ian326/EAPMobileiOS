@@ -12,8 +12,12 @@ struct API{
     static let route = "https://api.api-ninjas.com/v1/covid19?country=mexico"
 }
 
+protocol APIProtocol{
+    func getCountryCovidInfo() async -> CountryCovidInfo?
+}
+
 class Repository: APIProtocol {
-    
+    static let shared = Repository()
     let nservice: NetworkAPIService
         init(nservice: NetworkAPIService = NetworkAPIService.shared){
             self.nservice = nservice
