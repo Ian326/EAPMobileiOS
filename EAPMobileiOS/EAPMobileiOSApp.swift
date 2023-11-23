@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//App de SwiftUI que se comunica con la clase ContentView
 @main
 struct EAPMobileiOSApp: App {
     var body: some Scene {

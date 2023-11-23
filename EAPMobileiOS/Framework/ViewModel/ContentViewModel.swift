@@ -12,6 +12,7 @@ class ListReq {
     static let shared = ListRequirement()
 }
 
+//clase ContentViewModel que se comunica con la clase ListRequirement para obtener los datos de la API
 class ContentViewModel: ObservableObject{
     @Published var cases = [String: DayInfo]()
     
@@ -21,6 +22,7 @@ class ContentViewModel: ObservableObject{
             self.listRequirement = listRequirement
         }
     
+    //función que obtiene los datos de la API y los guarda en un diccionario. Se declara como MainActor para que se ejecute en el hilo principal
     @MainActor
     func getCountryCovidInfo() async{
         let Repository = Repository()
