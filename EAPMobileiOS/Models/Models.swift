@@ -6,18 +6,12 @@
 //
 import Foundation
 // Basado en la API de: https://api.api-ninjas.com/v1/covid19
-struct CountryCovidInfo{
+struct CountryCovidInfo: Codable{
     var country: String
-    var cases: [Case]
+    var cases: [String: DayInfo]
 }
 
-struct Case: Identifiable{
-    var id: Int
-    var date: String
-    var data: [DayInfo]
-}
-
-struct DayInfo{
+struct DayInfo: Codable{
     var total: Int
     var new: Int
 }
