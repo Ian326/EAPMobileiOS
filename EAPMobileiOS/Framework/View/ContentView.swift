@@ -27,11 +27,12 @@ struct ContentView: View {
                     }
                     Divider()
                 }
-            }.onAppear(){
-            Task{
-                await getCountryCovidInfo()
             }
-        }
+            //.onAppear(){
+            //Task{
+            //    await getCountryCovidInfo()
+            //}
+        //}
     }
 
     func getCountryCovidInfo() async{
@@ -53,5 +54,9 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        var cases: [String : DayInfo] = ["2020-01-04": DayInfo(total: 0, new: 1),
+                                         "2020-01-05": DayInfo(total: 6, new: 5),
+                                         "2020-01-06": DayInfo(total: 15, new: 9)]
+        ContentView(cases:cases)
     }
 }
