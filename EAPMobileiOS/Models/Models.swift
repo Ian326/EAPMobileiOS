@@ -4,7 +4,6 @@
 //
 //  Created by user326 on 23/11/23.
 //
-
 import Foundation
 // Basado en la API de: https://api.api-ninjas.com/v1/covid19
 struct CountryCovidInfo{
@@ -12,7 +11,8 @@ struct CountryCovidInfo{
     var cases: [Case]
 }
 
-struct Case{
+struct Case: Identifiable{
+    var id: Int
     var date: String
     var data: [DayInfo]
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import SDWebImageSwiftUI
 
 struct ContentView: View {
     @State var cases = [Case]()
@@ -32,9 +33,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let case1 = Case(date: "2020-01-23", data: [DayInfo(total: 100, new: 10)])
-        let case2 = Case(date: "2020-01-24", data: [DayInfo(total: 200, new: 20)])
-        let case3 = Case(date: "2020-01-25", data: [DayInfo(total: 300, new: 30)])
+        let case1 = Case(id: 1, date: "2020-01-23", data: [DayInfo(total: 100, new: 10)])
+        let case2 = Case(id: 2, date: "2020-01-24", data: [DayInfo(total: 200, new: 20)])
+        let case3 = Case(id: 3, date: "2020-01-25", data: [DayInfo(total: 300, new: 30)])
         
         let cases : [Case] = [case1, case2, case3]
         
