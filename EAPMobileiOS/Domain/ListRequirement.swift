@@ -11,6 +11,8 @@ protocol countryCovidListReqProtocol{
     func getCountryCovidInfo() async -> CountryCovidInfo?
 }
 
+//clase ListRequirement que implementa el protocolo countryCovidListReqProtocol. 
+//Se comunica con la clase Repository para obtener los datos de la API
 class ListRequirement: countryCovidListReqProtocol {
     let dataRepository: Repository
 

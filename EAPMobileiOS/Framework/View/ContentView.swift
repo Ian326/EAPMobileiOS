@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 import SDWebImageSwiftUI
 
+// ContentView que muestra la lista de dias y sus casos de COVID
 struct ContentView: View {
     @State var cases = [String: DayInfo]()
     let API2 = "https://image.tmdb.org/t/p/w500"
@@ -35,6 +36,8 @@ struct ContentView: View {
         //}
     }
 
+    //función que obtiene los datos de la API. Regresa un objeto CountryCovidInfo. 
+    //Se comunica con la clase Repository para obtener los datos de la API
     func getCountryCovidInfo() async{
         let Repository = Repository()
         let result = await Repository.getCountryCovidInfo()
@@ -51,6 +54,7 @@ struct ContentView: View {
     }
 }
 
+// ContentView_Previews. Muestra la vista previa de ContentView
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
