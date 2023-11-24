@@ -9,6 +9,8 @@ import Foundation
 
 // Estructura para el modelo de datos de la API
 struct CountryCovidInfo: Codable{
+    //var country: String
+    var region: String
     var country: String
     var cases: [String: DayInfo]
 }

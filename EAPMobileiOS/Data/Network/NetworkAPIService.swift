@@ -15,8 +15,7 @@ class NetworkAPIService {
     
     //función que obtiene los datos de la API. Regresa un objeto CountryCovidInfo.
     func getCountryCovidInfo(url: URL) async -> CountryCovidInfo?{
-        var headers: HTTPHeaders = [:]
-        headers["X-Api-Key"] = "\(apiKey)"
+        var headers: HTTPHeaders = ["X-Api-Key" : apiKey]
         let taskRequest = AF.request(url, method: .get, headers: headers).validate()
         let response = await taskRequest.serializingData().response
 

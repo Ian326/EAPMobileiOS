@@ -17,6 +17,7 @@
 		E1766AFC2B0FC4BE009DC969 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1766AFB2B0FC4BE009DC969 /* SDWebImageSwiftUI */; };
 		E1766AFF2B0FC510009DC969 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1766AFE2B0FC510009DC969 /* Models.swift */; };
 		E1766B012B0FC525009DC969 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1766ACF2B0FC2DC009DC969 /* ContentView.swift */; };
+		E17AB0AE2B10FEE5008C6899 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AB0AD2B10FEE5008C6899 /* RequestView.swift */; };
 		E1E784122B0FD09A0023183F /* NetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784112B0FD09A0023183F /* NetworkAPIService.swift */; };
 		E1E784162B0FD0CB0023183F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784152B0FD0CB0023183F /* Repository.swift */; };
 		E1E7841A2B0FEAC50023183F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E784192B0FEAC50023183F /* ContentViewModel.swift */; };
@@ -52,6 +53,7 @@
 		E1766AE82B0FC2E0009DC969 /* EAPMobileiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAPMobileiOSUITests.swift; sourceTree = "<group>"; };
 		E1766AEA2B0FC2E0009DC969 /* EAPMobileiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAPMobileiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1766AFE2B0FC510009DC969 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E17AB0AD2B10FEE5008C6899 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		E1E784112B0FD09A0023183F /* NetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIService.swift; sourceTree = "<group>"; };
 		E1E784152B0FD0CB0023183F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E1E784192B0FEAC50023183F /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E1766ACF2B0FC2DC009DC969 /* ContentView.swift */,
+				E17AB0AD2B10FEE5008C6899 /* RequestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17AB0AE2B10FEE5008C6899 /* RequestView.swift in Sources */,
 				E1766AFF2B0FC510009DC969 /* Models.swift in Sources */,
 				E1766ACE2B0FC2DC009DC969 /* EAPMobileiOSApp.swift in Sources */,
 				E1766B012B0FC525009DC969 /* ContentView.swift in Sources */,
