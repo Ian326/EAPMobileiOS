@@ -24,7 +24,7 @@ struct DayInfo: Codable, Identifiable{
 }
 
 // Estructura para el modelo de datos de a utilizar en el View
-struct CaseInfo: Codable{
+struct CaseInfo: Codable, Hashable{
     var date: String
     var total: Int
     var new: Int
