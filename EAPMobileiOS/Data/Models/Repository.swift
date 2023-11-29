@@ -27,6 +27,7 @@ class Repository: APIProtocol {
         }
     
     func getCountryCovidInfo() async -> CountryCovidInfo?{
-        return await nservice.getCountryCovidInfo(url: URL(string:API.route)!)
+        let apiReq: [CountryCovidInfo]?  = await nservice.getCountryCovidInfo(url: URL(string:API.route)!)
+        return apiReq!.first
     }
 }

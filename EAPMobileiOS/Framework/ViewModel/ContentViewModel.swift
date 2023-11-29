@@ -14,7 +14,7 @@ class ListReq {
 
 //clase ContentViewModel que se comunica con la clase ListRequirement para obtener los datos de la API
 class ContentViewModel: ObservableObject{
-    @Published var cases = [String: DayInfo]()
+    @Published var cases = [DayInfo]()
     
     var listRequirement: countryCovidListReqProtocol
     
@@ -27,13 +27,15 @@ class ContentViewModel: ObservableObject{
     func getCountryCovidInfo() async{
         let Repository = Repository()
         let result = await Repository.getCountryCovidInfo()
-        var i = 1
-        for (date, DayInf) in result!.cases {
-            let tempCase = DayInfo(total: DayInf.total, new: DayInf.new)
-            
-            self.cases[date] = tempCase
-            
-            i+=1
+        for (index, (date, DayInf)) in result!.cases.prefix(10).enumerated() {
+            let tempCase = DayInfo(id: index, date: date, total: DayInf.total, new: DayInf.new)
+            self.cases.append(tempCase)
         }
+        
+        print("Elements:")
+        for unitCase in self.cases{
+            print(unitCase)
+        }
+        print("========================================================")
     }
 }

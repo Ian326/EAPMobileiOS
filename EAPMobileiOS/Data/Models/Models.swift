@@ -16,7 +16,9 @@ struct CountryCovidInfo: Codable{
 }
 
 // Estructura para el modelo de datos de la API
-struct DayInfo: Codable{
+struct DayInfo: Codable, Identifiable{
+    var id: Int?
+    var date: String?
     var total: Int
     var new: Int
 }
