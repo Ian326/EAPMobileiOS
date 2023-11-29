@@ -6,61 +6,53 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
-import SDWebImageSwiftUI
+import Charts
 
 // ContentView que muestra la lista de dias y sus casos de COVID
 struct ContentView: View {
-    @State var cases = [String: DayInfo]()
-    let API2 = "https://image.tmdb.org/t/p/w500"
+    @State var contentViewModel = ContentViewModel()
     var body: some View {
-            List(cases.sorted(by: { $0.key < $1.key }), id: \.key) { (date, DayInfo) in
-                VStack {
-                    HStack {
-                        Text(date)
-                            .font(.title)
-                    }
-                    HStack {
-                        Text("Total: \(DayInfo.total)")
-                            .font(.headline)
-                        Text("New: \(DayInfo.new)")
-                            .font(.headline)
-                    }
+        VStack{
+            if contentViewModel.cases.isEmpty{
+                Text("Cargando Estadísticas...")
+            }
+            else{
+                ScrollView{
+                    Text("Estadisticas Casos COVID-19")
+                        .font(.title)
+                    Text("Pais: \(contentViewModel.country)")
+                        .font(.title2)
+                    Text("(Se muestran 10 casos aleatorios en el periodo de la pandemia)")
+                        .font(.headline)
+                    
                     Divider()
+                    
+                    Chart(contentViewModel.cases, id:\.self){
+                        day in
+                        BarMark(x: .value("Fecha", day.date),
+                                y: .value("Contagios", day.new))
+                    }
+                    
+                    Divider()
+                    
+                    VStack{
+                        HStack{
+                            Text("Rango de fechas: \(contentViewModel.cases[0].date) - \(contentViewModel.cases[contentViewModel.cases.count - 1].date)")
+                        }
+                        
+                        Spacer()
+                        
+                        HStack{
+                            Text("Avg Per Day: \(contentViewModel.avgPerDayReg) | Total (In this days): \(contentViewModel.totalInReg)")
+                        }
+                    }
                 }
             }
-            //.onAppear(){
-            //Task{
-            //    await getCountryCovidInfo()
-            //}
-        //}
-    }
-
-    //función que obtiene los datos de la API. Regresa un objeto CountryCovidInfo. 
-    //Se comunica con la clase Repository para obtener los datos de la API
-    func getCountryCovidInfo() async{
-        let Repository = Repository()
-        let result = await Repository.getCountryCovidInfo()
-        var tempCasesList = [String: DayInfo]()
-        var i = 1
-        for (date, DayInf) in result!.cases {
-            let tempCase = DayInfo(total: DayInf.total, new: DayInf.new)
-            
-            tempCasesList[date] = tempCase
-            
-            i+=1
         }
-        cases = tempCasesList
-    }
-}
-
-// ContentView_Previews. Muestra la vista previa de ContentView
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        var cases: [String : DayInfo] = ["2020-01-04": DayInfo(total: 0, new: 1),
-                                         "2020-01-05": DayInfo(total: 6, new: 5),
-                                         "2020-01-06": DayInfo(total: 15, new: 9)]
-        ContentView(cases:cases)
+        .onAppear(){
+            Task{
+                await contentViewModel.getCountryCovidInfo()
+                }
+        }
     }
 }
