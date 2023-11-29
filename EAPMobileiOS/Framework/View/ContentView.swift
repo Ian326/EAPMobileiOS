@@ -6,18 +6,23 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
-import SDWebImageSwiftUI
 
 // ContentView que muestra la lista de dias y sus casos de COVID
 struct ContentView: View {
     @State var contentViewModel = ContentViewModel()
     var body: some View {
-        Text("HelloWorld")
-        .onAppear(){
-        Task{
-            await contentViewModel.getCountryCovidInfo()
+        VStack{
+            if contentViewModel.cases.isEmpty{
+                Text("Cargando Estadísticas...")
             }
+            else{
+                Text("Estadísticas Cargadas! :)")
+            }
+        }
+        .onAppear(){
+            Task{
+                await contentViewModel.getCountryCovidInfo()
+                }
         }
     }
 }

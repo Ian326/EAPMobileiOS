@@ -22,3 +22,10 @@ struct DayInfo: Codable, Identifiable{
     var total: Int
     var new: Int
 }
+
+// Estructura para el modelo de datos de a utilizar en el View
+struct CaseInfo: Codable{
+    var date: String
+    var total: Int
+    var new: Int
+}
